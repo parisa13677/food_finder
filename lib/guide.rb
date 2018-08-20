@@ -41,6 +41,7 @@ class Guide
 	end
 
 	def get_action
+		action = nil
 
 		print "> "
 		user_response = gets.chomp
