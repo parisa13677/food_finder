@@ -73,7 +73,7 @@ class Guide
 		puts "\nlist a restaurant\n\n".upcase
 		restaurant = Restaurant.saved_restaurant
 		restaurant.each do |rest| 
-			puts "#{rest.name} | #{rest.cuisine} | #{rest.price}"
+			puts "#{rest.name} | #{rest.cuisine} | #{rest.formated_price}"
 		#...
 		end
 	end

@@ -1,9 +1,10 @@
-require 'support/number_helper'
+require_relative 'support/number_helper'
 
 class Restaurant
 
 
-include NunmberHelper
+include NumberHelper
+
 	@@filepath = nil
 
 	def self.filepath=(path=nil)
@@ -36,6 +37,11 @@ include NunmberHelper
 
 
 	end	
+
+	def formated_price
+		number_to_currency(@price)
+		
+	end
 
 	def self.file_exists?
 		# class shoul know if the restaurant file exists
