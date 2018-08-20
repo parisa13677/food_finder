@@ -41,4 +41,9 @@ class Restaurant
 		
 	end
 
+
+	def save
+		
+	end
+
 end
