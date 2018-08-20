@@ -39,7 +39,7 @@ class Guide
 	end
 
 	def do_action(action)
-		case do_action
+		case action
 		when 'list'
 			puts "Listing..."
 		when 'find'
