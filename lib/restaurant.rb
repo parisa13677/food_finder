@@ -9,6 +9,12 @@ class Restaurant
 
 	attr_accessor :name, :cuisine, :price
 
+	def initialize(args={})
+		@name    = args[:name]      || ""
+		@cuisine = args[:cuisine]   || ""
+		@price   = args[:price]     || ""
+	end 	
+
 	def self.file_exists?
 		# class shoul know if the restaurant file exists
 		if @@filepath && File.exists?(@@filepath)
