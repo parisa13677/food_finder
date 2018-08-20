@@ -38,6 +38,7 @@ class Guide
 
 		print "> "
 		user_response = gets.chomp
+		action = user_response.downcase.strip
 		return action
 	end
 
