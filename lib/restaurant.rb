@@ -1,5 +1,9 @@
+require 'support/number_helper'
+
 class Restaurant
 
+
+include NunmberHelper
 	@@filepath = nil
 
 	def self.filepath=(path=nil)
@@ -62,7 +66,7 @@ class Restaurant
 	def self.saved_restaurant
 		restaurant = []
 		if file_usable?
-			file = file.new(@@filepath, 'r')
+			file = File.new(@@filepath, 'r')
 			file.each_line do |line|
 				restaurant << Restaurant.new.import_line(line.chomp)
 			 end
