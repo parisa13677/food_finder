@@ -13,14 +13,32 @@ class Restaurant
 		@name    = args[:name]      || ""
 		@cuisine = args[:cuisine]   || ""
 		@price   = args[:price]     || ""
-	end 	
+	end 
+	
+	def self.build_using_questions
+
+		args ={}
+
+		print "Restaurant name: "
+		args[:name].name = gets.chomp.strip
+
+		print "Cuisine type: "
+		args[:cuisine].cuisine = gets.chomp.strip
+
+		print "Average price: "
+		args[:price].price = gets.chomp.strip 
+
+		return self.new(args)
+
+
+	end	
 
 	def self.file_exists?
 		# class shoul know if the restaurant file exists
 		if @@filepath && File.exists?(@@filepath)
 			return true
 		else
-		    return false
+			return false
 		end    	
 		
 	end
@@ -52,9 +70,9 @@ class Restaurant
 		return false unless Restaurant.file_usable?
 		File.open(@@filepath, 'a') do |file|
 			file.puts "#{[@name, @cuisine, @price].join("\t")}\n"
-		
-	   end
-	return true
-    end
+
+		end
+		return true
+	end
 
 end
