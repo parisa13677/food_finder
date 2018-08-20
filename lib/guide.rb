@@ -6,7 +6,7 @@ class Guide
 	def initialize(path=nil)
 
 		# locate the resturant text file at path
-		Resturant.file_path = path
+		Resturant.filepath = path
 		# exit if creat fails
 		# or creat a new file
 		if Resturant.file_exists?
