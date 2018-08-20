@@ -9,7 +9,7 @@ class Guide
 		Restaurant.filepath = path
 		# exit if creat fails
 		# or creat a new file
-		if Restaurant.file_exists?
+		if Restaurant.file_usable?
 			puts "Found resturant file."
 		elsif Restaurant.create_file
 			puts " Ctreated resturant file"
