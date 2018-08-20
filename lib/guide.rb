@@ -23,8 +23,16 @@ class Guide
 	def launch!
 		 introduction
 		# action loop
+		result = nil
+		until result == :quit
 		# what do you want to do ? (list, find, add, quit)
+		print "> "
+		user_response = gets.chomp
 		# do that action
+		result = do_action(user_response)
+
+		end
+		
 		# repeat until user quits
 		 conclusion
 		
