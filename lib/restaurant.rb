@@ -75,7 +75,7 @@ class Restaurant
 	end
 
 	def import_line(line)
-		line_array = line_split("\t")
+		line_array = line.split("\t")
 		@name, @cuisine, @price = line_array
 		return self
 		
