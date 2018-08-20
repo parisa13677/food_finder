@@ -38,6 +38,23 @@ class Guide
 		
 	end
 
+	def do_action(action)
+		case do_action
+		when 'list'
+			puts "Listing..."
+		when 'find'
+			puts "Finding..."
+		when 'add'
+			puts "Adding..."
+		when 'quit'
+			return :quit
+		else
+		    puts "\n I don t understand that command.\n"			
+			
+		end
+		
+	end
+
 	def introduction
 		puts "\n\n<<< welcome to the Food Finder >>>\n\n"
 		puts " this is an interactive guide to help you find the food you crave.\n\n"
