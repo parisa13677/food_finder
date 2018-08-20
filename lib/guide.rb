@@ -76,7 +76,14 @@ class Guide
 		print "Restaurant name: "
 		restaurant.name = gets.chomp.strip
 
-		
+		print "Cuisine type: "
+		restaurant.cuisine = gets.chomp.strip
+
+		print "Average price: "
+		restaurant.price = gets.chomp.strip
+
+
+
 		
 
 	end
