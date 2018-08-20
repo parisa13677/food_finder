@@ -1,4 +1,4 @@
-require "resturant"
+require "restaurant"
 
 class Guide
 
