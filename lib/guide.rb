@@ -69,6 +69,13 @@ class Guide
 		
 	end
 
+	def list
+		puts "\nlist a restaurant\n\n".upcase
+		restaurant = Restaurant.saved_restaurant
+		#...
+		
+	end
+
 	def add
 		puts "\nAdd a restaurant\n\n".upcase
 		
