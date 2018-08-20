@@ -7,6 +7,7 @@ class Guide
 
 		# locate the resturant text file at path
 		Resturant.file_path = path
+		# exit if creat fails
 		# or creat a new file
 		if Resturant.file_exists?
 			puts "Found resturant file."
@@ -14,9 +15,9 @@ class Guide
 			puts " Ctreated resturant file"
 		else
 			puts "Existing...\n\n"
-			
-				
-		# exit if creat fails
+			exit!
+		end 	
+
 		
 	end
 
