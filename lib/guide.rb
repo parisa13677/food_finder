@@ -72,6 +72,7 @@ class Guide
 	def add
 		puts "\nAdd a restaurant\n\n".upcase
 		restaurant = Restaurant.new
+		print "Restaurant name: "
 		
 	end
 
