@@ -17,7 +17,7 @@ class Restaurant
 		
 	end
 
-	def self.file_usable
+	def self.file_usable?
 		return false unless  @@filepath
 		return false unless  File.exists?(@@filepath)
 		return false unless  File.readable?(@@filepath)
