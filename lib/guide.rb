@@ -59,7 +59,7 @@ class Guide
 		when 'find'
 			puts "Finding..."
 		when 'add'
-			puts "Adding..."
+			add
 		when 'quit'
 			return :quit
 		else
