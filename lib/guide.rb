@@ -8,6 +8,14 @@ class Guide
 		# locate the resturant text file at path
 		Resturant.file_path = path
 		# or creat a new file
+		if Resturant.file_exists?
+			puts "Found resturant file."
+		elsif Resturant.create_file
+			puts " Ctreated resturant file"
+		else
+			puts "Existing...\n\n"
+			
+				
 		# exit if creat fails
 		
 	end
