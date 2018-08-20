@@ -1,5 +1,5 @@
-gas	76	987
+gas	english	87
 lindo	persion	23
-adan	coffe irani	12
-uy	o	9
-w	t	5
+adan	italy irani	12
+sandbad	english	9
+baray	persion	5
