@@ -23,8 +23,6 @@ class Restaurant
 		return false unless  File.readable?(@@filepath)
 		return false unless  File.writable?(@@filepath)
 		return true
-			
-		end
 		
 	end
 
