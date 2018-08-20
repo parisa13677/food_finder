@@ -44,7 +44,7 @@ class Guide
 		action = nil
 		# keep asking for user input until we get a valid action
 		until Guide::Config.actions.include?(action)
-			puts "Actions:" + Guide:: Config.action.join(",") if action
+			puts "Actions:" + Guide:: Config.actions.join(",") if action
 		    print "> "
 		    user_response = gets.chomp
 		    action = user_response.downcase.strip
