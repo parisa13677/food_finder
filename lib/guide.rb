@@ -54,10 +54,10 @@ class Guide
 		return action, args
 	end
 
-	def do_action(action, args[])
+	def do_action(action, args=[])
 		case action
 		when 'list'
-			list
+			list(args)
 		when 'find'
 			keyword = args.shift
 			find(keyword)
@@ -72,10 +72,27 @@ class Guide
 		
 	end
 
-	def list
+	def list(args=[])
+		sort_order = args.shift 
+		sort_order = args.shift if sort_order == 'by'
+		sort_order = "name" unless ['name','cuisine', 'price'].include?(sort_order)
+			
+		
 		output_action_header("Listing Restaurant")
+
 		restaurant = Restaurant.saved_restaurant
+		restaurant.sort! do |r1, r2|
+			case sort_order
+		when 'name'
+			r1.name.downcase <=> r2.name.downcase
+		when 'cuisine'
+			r1.cuisine.downcase <=> r2.cuisine.downcase
+		when 'price'
+			r1.price.to_i <=> r2.price.to_i
+		end
+	end	
 		output_restaurant_table(restaurant)
+		puts "Sort using: 'list cuisine' or 'list by cuisine'\n\n"
 	end
 
 	def find(keyword="")
@@ -83,8 +100,8 @@ class Guide
 		if keyword
 			restaurants = Restaurant.saved_restaurant
 			found = restaurants.select do |rest|
-				rest.name.downcase.include?(keyword.downcase)
-				rest.cuisine.downcase.include?(keyword.downcase)
+				rest.name.downcase.include?(keyword.downcase) ||
+				rest.cuisine.downcase.include?(keyword.downcase) ||
 				rest.price.to_i <= keyword.to_i
 
 			end	
@@ -136,7 +153,9 @@ class Guide
 		puts  " " * 60
 		restaurants.each do |rest|
 			line = " " << rest.name.titleize.ljust(30)
+			line << " " + rest.cuisine.titleize.rjust(20)
 			line << " " + rest.formated_price.rjust(6)
+
 			puts line
 		end
 		puts "No listing found" if restaurants.empty?
