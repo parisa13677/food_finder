@@ -1,9 +1,12 @@
+require "resturant"
+
 class Guide
 
 
 	def initialize(path=nil)
 
 		# locate the resturant text file at path
+		Resturant.file_path = path
 		# or creat a new file
 		# exit if creat fails
 		
