@@ -7,7 +7,7 @@ class Restaurant
 		
 	end
 
-	attr accessor :name, :cuisine, :price
+	attr_accessor :name, :cuisine, :price
 
 	def self.file_exists?
 		# class shoul know if the restaurant file exists
@@ -47,7 +47,8 @@ class Restaurant
 		File.open(@@filepath, 'a') do |file|
 			file.puts "#{[@name, @cuisine, @price].join("\t")}\n"
 		
-	end
+	   end
 	return true
+    end
 
 end
