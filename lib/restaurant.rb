@@ -7,6 +7,8 @@ class Restaurant
 		
 	end
 
+	attr accessor :name, :cuisine, :price
+
 	def self.file_exists?
 		# class shoul know if the restaurant file exists
 		if @@filepath && File.exists?(@@filepath)
