@@ -69,6 +69,12 @@ class Guide
 		
 	end
 
+	def add
+		puts "\nAdd a restaurant\n\n".upcase
+		restaurant = Restaurant.new
+		
+	end
+
 	def introduction
 		puts "\n\n<<< welcome to the Food Finder >>>\n\n"
 		puts " this is an interactive guide to help you find the food you crave.\n\n"
